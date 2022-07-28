@@ -916,15 +916,20 @@ as well. Please follow the installation steps from
 
 
 <span class="k">class</span> <span class="nc">Client</span><span class="p">(</span><span class="n">TenantMixin</span><span class="p">):</span>
-  <span class="k">pass</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This table provides the `tenant_uuid` needed</span>
+<span class="sd">    to be used in the `X_REQUEST_HEADER` and consumed</span>
+<span class="sd">    by the RequestUUIDTenantMiddleware.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
 
 
 <span class="k">class</span> <span class="nc">Domain</span><span class="p">(</span><span class="n">DomainMixin</span><span class="p">):</span>
-  <span class="k">pass</span>
+    <span class="k">pass</span>
 
 
 <span class="k">class</span> <span class="nc">TenantUser</span><span class="p">(</span><span class="n">TenantUserMixin</span><span class="p">):</span>
-  <span class="k">pass</span>
+    <span class="k">pass</span>
 </code></pre></div>
 <ol>
 <li>Add the <code>DTU_TENANT_USER_MODEL</code> to <code>settings.py</code>.</li>
@@ -963,9 +968,16 @@ as well. Please follow the installation steps from
 </ol>
 <div class="highlight"><pre><span></span><code>python manage.py migrate_schemas
 </code></pre></div>
+<ol>
+<li>The <code>UUID</code> needed for the <code>RequestUUIDTenantMiddleware</code> can be found in your
+   table inherited from the <code>TenantMixin</code>.</li>
+</ol>
 <p><strong>None: Do not run <code>python manage.py migrate</code> or else it will sync everything into the public.</strong></p>
 <p>And that is it. The <code>RequestUUIDTenantMiddleware</code> should be able to map
 the <code>TenantUser</code> created with a tenant and route the queries to the associated schema.</p>
+<p>Checkout the <a href="https://tarsil.github.io/django-tenants-url/">documentation</a>
+and understand how to integrate with your views and taking advantage
+of the utils for your <code>TenantUser</code> (or your implementation),</p>
 <h3 id="django-tenants-url-settings">Django Tenants URL Settings<a class="headerlink" href="#django-tenants-url-settings" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># default settings</span>
 
@@ -983,6 +995,7 @@ the <code>TenantUser</code> created with a tenant and route the queries to the a
 <p>By default <code>django-tenants-url</code> has the header name <code>HTTP_X_REQUEST_ID</code> that will be lookup
 from the middleware when sent via HTTP. This name can be changed to whatever suits yours needs.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>A Django Like app implementing Django Tenants Url can be found <a href="https://github.com/tarsil/django-tenants-url/tree/main/dtu_test_project">here</a>.</p>
 <p>The example can be found <a href="example/">here</a></p>
 <h2 id="documentation-and-support">Documentation and Support<a class="headerlink" href="#documentation-and-support" title="Permanent link">&para;</a></h2>
 <p>Full documentation for the project is available at <a href="https://tarsil.github.io/django-tenants-url/">https://tarsil.github.io/django-tenants-url/</a></p>
