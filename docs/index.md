@@ -142,15 +142,20 @@ pip install django-tenants-url
 
 
    class Client(TenantMixin):
-     pass
+       """
+       This table provides the `tenant_uuid` needed
+       to be used in the `X_REQUEST_HEADER` and consumed
+       by the RequestUUIDTenantMiddleware.
+       """
+       pass
 
 
    class Domain(DomainMixin):
-     pass
+       pass
 
 
    class TenantUser(TenantUserMixin):
-     pass
+       pass
 
    ```
 
@@ -196,10 +201,17 @@ pip install django-tenants-url
    python manage.py migrate_schemas
    ```
 
+9. The `UUID` needed for the `RequestUUIDTenantMiddleware` can be found in your
+   table inherited from the `TenantMixin`.
+
 **None: Do not run `python manage.py migrate` or else it will sync everything into the public.**
 
 And that is it. The `RequestUUIDTenantMiddleware` should be able to map
 the `TenantUser` created with a tenant and route the queries to the associated schema.
+
+Checkout the [documentation](https://tarsil.github.io/django-tenants-url/)
+and understand how to integrate with your views and taking advantage
+of the utils for your `TenantUser` (or your implementation),
 
 ### Django Tenants URL Settings
 
@@ -224,6 +236,8 @@ By default `django-tenants-url` has the header name `HTTP_X_REQUEST_ID` that wil
 from the middleware when sent via HTTP. This name can be changed to whatever suits yours needs.
 
 ## Example
+
+A Django Like app implementing Django Tenants Url can be found [here](https://github.com/tarsil/django-tenants-url/tree/main/dtu_test_project).
 
 The example can be found [here](./example.md)
 
