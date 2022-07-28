@@ -1,0 +1,13 @@
+include LICENSE
+include AUTHORS
+include README.md
+include *.txt
+
+include VERSION
+recursive-include docs *
+recursive-include examples *
+recursive-include dtu_test_project *
+
+# exclude all bytecode
+global-exclude __pycache__
+global-exclude *.py[co]

@@ -1,0 +1,13 @@
+"""
+Settings used for Django Tenants URL
+"""
+
+DTU_TENANT_NAME = "Public"
+DTU_TENANT_SCHEMA = "public"
+DTU_DOMAIN_NAME = "localhost"
+DTU_PAID_UNTIL = "2100-12-31"
+DTU_ON_TRIAL = False
+DTU_HEADER_NAME = "HTTP_X_REQUEST_ID"
+DTU_AUTO_CREATE_SCHEMA = True
+DTU_AUTO_DROP_SCHEMA = False
+DTU_TENANT_USER_MODEL = None

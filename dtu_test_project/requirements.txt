@@ -1,0 +1,14 @@
+bleach
+django>=3.2.13
+djangorestframework==3.13.1
+django-tenants==3.4.2
+postgres
+
+# TEST
+django_extensions
+django-webtest
+factory_boy
+pytest-django
+pytest-pspec
+unittest-data-provider==1.0.1
+webtest

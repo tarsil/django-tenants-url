@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:12.3
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_DB: dtu_test_project
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: postgres
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"

@@ -1,0 +1,52 @@
+site_name: Django Tenants URL
+site_description: The little library for your django projects with little effort.
+
+repo_name: tarsil/django-tenants-url
+repo_url: https://github.com/tarsil/django-tenants-url
+edit_uri: ""
+
+theme:
+  name: material
+
+  palette:
+    # Toggle light mode
+    - scheme: default
+      primary: green
+      accent: red
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+    # Toggle dark mode
+    - scheme: slate
+      primary: pink
+      accent: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+nav:
+  - Installation: "index.md"
+  - Models: "models.md"
+  - Views: "views.md"
+  - Serializers: "serializers.md"
+  - Permissions: "permissions.md"
+  - URLs: "urls.md"
+  - Middleware: "middleware.md"
+  - Handlers: "handlers.md"
+  - Utils: "utils.md"
+  - Settings: "settings.md"
+  - Others:
+      - Example: "example.md"
+  - Releases: "releases.md"
+  # - Utils:
+  # - Audit: "utils/audit.md"

@@ -1,0 +1,5 @@
+twine
+build
+django>=3.2.13
+djangorestframework==3.13.1
+django-tenants==3.4.2
