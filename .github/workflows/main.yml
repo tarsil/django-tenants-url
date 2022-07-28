@@ -65,6 +65,3 @@ jobs:
 
       - name: Upload to pypi.
         run: twine upload -u ${{ secrets.PYPI_USER }} -p ${{ secrets.PYPI_PASSWORD }} --skip-existing dist/*.whl
-
-      - name: Upload docs.
-        run: mkdocs gh-deploy --force
