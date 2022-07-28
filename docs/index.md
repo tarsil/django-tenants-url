@@ -233,7 +233,8 @@ DTU_TENANT_USER_MODEL = None
 ### X_REQUEST_ID
 
 By default `django-tenants-url` has the header name `HTTP_X_REQUEST_ID` that will be lookup
-from the middleware when sent via HTTP. This name can be changed to whatever suits yours needs.
+from the middleware when sent via HTTP.
+This name can be overriten by the special setting `DTU_HEADER_NAME`.
 
 ## Example
 
