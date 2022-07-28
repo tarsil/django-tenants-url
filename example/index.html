@@ -783,18 +783,18 @@ and <a href="../handlers/">handlers</a> that can be used accordingly.</p>
 <p><code>django-tenants-url</code> provides out-of-the-box <a href="../views/">views</a> to help you with all of the process as well
 as some functions that can be used to get some of the information like the UUID needed
 to be used in the header of a request and map to user schema.</p>
-<div class="highlight"><pre><span></span><code><span class="kc">fr</span><span class="err">om</span><span class="w"> </span><span class="err">dja</span><span class="kc">n</span><span class="err">go_</span><span class="kc">tenants</span><span class="err">_url.u</span><span class="kc">t</span><span class="err">ils</span><span class="w"> </span><span class="err">impor</span><span class="kc">t</span><span class="w"> </span><span class="err">ge</span><span class="kc">t</span><span class="err">_</span><span class="kc">tenants</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django_tenants_url.utils</span> <span class="kn">import</span> <span class="n">get_tenants</span>
 
-<span class="kc">tenants</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">ge</span><span class="kc">t</span><span class="err">_</span><span class="kc">tenants</span><span class="err">()</span><span class="w"></span>
-<span class="err">pri</span><span class="kc">nt</span><span class="err">(</span><span class="kc">tenants</span><span class="err">)</span><span class="w"></span>
+<span class="n">tenants</span> <span class="o">=</span> <span class="n">get_tenants</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tenants</span><span class="p">)</span>
 
-<span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;tenant_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Public&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;tenant_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a66b19e4-3985-42a1-87e1-338707c4a203&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;tenant_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Public&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tenant_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;a66b19e4-3985-42a1-87e1-338707c4a203&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
 </code></pre></div>
 <h2 id="use-the-uuid-within-the-headers">Use the UUID within the headers<a class="headerlink" href="#use-the-uuid-within-the-headers" title="Permanent link">&para;</a></h2>
 <p>Using the uuid <code>a66b19e4-3985-42a1-87e1-338707c4a203</code> we can now use the header
