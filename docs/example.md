@@ -145,7 +145,7 @@ Once the first request hits the server, it should create the public tenant and p
 as some functions that can be used to get some of the information like the UUID needed
 to be used in the header of a request and map to user schema.
 
-```JSON
+```python
 from django_tenants_url.utils import get_tenants
 
 tenants = get_tenants()
