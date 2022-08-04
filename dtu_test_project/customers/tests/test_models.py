@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import IntegrityError, connection
-from django.test import TransactionTestCase
+from django_tenants.test.cases import FastTenantTestCase
 from django_tenants.utils import get_tenant_domain_model, get_tenant_model
 
 from django_tenants_url.utils import (
@@ -12,7 +12,7 @@ from django_tenants_url.utils import (
 from .factories import TenantFactory, TenantUserFactory, UserFactory
 
 
-class BaseTest(TransactionTestCase):
+class BaseTest(FastTenantTestCase):
     def tearDown(self) -> None:
         connection.set_schema_to_public()
         get_user_model().objects.all().delete()
@@ -35,6 +35,7 @@ class TestTenantUser(BaseTest):
         self.assertEqual(self.user.tenant_users.count(), 1)
 
     def test_active_schema_user(self):
+        connection.set_schema_to_public()
         tenant = TenantFactory()
         tenant_user = TenantUserFactory(user=self.user, tenant=tenant, is_active=True)
 
