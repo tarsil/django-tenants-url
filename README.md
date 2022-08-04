@@ -17,8 +17,6 @@
    - [About Django Tenants URL](#about-django-tenants-url)
    - [Dependencies](#dependencies)
    - [Motivation](#motivation)
-      - [Overview](#overview)
-         - [Supported Django and Python Versions](#supported-django-and-python-versions)
    - [Installation](#installation)
       - [After installing django-tenants](#after-installing-django-tenants)
          - [Install django-tenants-url](#install-django-tenants-url)
@@ -90,17 +88,6 @@ needs to be mapped and forward?
 
 **This is what django-tenants-url solves. A single url that does the multi tenancy
 without breaking the principle and architecture and simply using one single url**
-
-### Overview
-
-#### Supported Django and Python Versions
-
-| Django / Python | 3.7 | 3.8 | 3.9 | 3.10 |
-| --------------- | --- | --- | --- | ---- |
-| 3.1             | Yes | Yes | Yes | Yes  |
-| 3.2             | Yes | Yes | Yes | Yes  |
-| 4.0             | Yes | Yes | Yes | Yes  |
-| 4.1             | Yes | Yes | Yes | Yes  |
 
 ## Installation
 
