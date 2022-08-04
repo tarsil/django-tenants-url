@@ -4,12 +4,13 @@ on:
   push:
     branches:
       - master
+      - develop
       - main
-      - ci
-      - /^release\/.*/
-      - /^fix\/.*/
-      - /^hotfix\/.*/
-      - /^feature\/.*/
+      - release/**
+      - fix/**
+      - hotfix/**
+      - feature/**
+
 jobs:
   tests:
     name: Python ${{ matrix.python-version }}
