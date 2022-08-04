@@ -8,9 +8,7 @@ postgres
 django_extensions
 django-webtest
 factory_boy
-pytest>=4
-pluggy>=0.12
-pytest-django==3.8.0
+pytest-django
 pytest-pspec
 unittest-data-provider==1.0.1
 webtest
