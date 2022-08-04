@@ -6,7 +6,10 @@ on:
       - master
       - main
       - ci
-      - release
+      - /^release\/.*/
+      - /^fix\/.*/
+      - /^hotfix\/.*/
+      - /^feature\/.*/
 jobs:
   tests:
     name: Python ${{ matrix.python-version }}
@@ -25,6 +28,8 @@ jobs:
           POSTGRES_DB: dtu_test_project
           POSTGRES_PASSWORD: root
           POSTGRES_USER: postgres
+        ports:
+          - "5432:5432"
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -59,18 +64,23 @@ jobs:
           cd dtu_test_project
           make test
 
-      - name: Remove venv
+      - if: always()
+        name: Remove venv
         run: |
           rm -r dtu_test_project/venv
 
-      - name: Install Python dependencies
+      - if: ${{ github.ref == 'refs/heads/main' && 'main' || github.ref == 'refs/heads/develop' && 'develop' }}
+        name: Install Python dependencies
         run: pip install wheel twine mkdocs-material
 
-      - name: Build Python package
+      - if: ${{ github.ref == 'refs/heads/main' && 'main' || github.ref == 'refs/heads/develop' && 'develop' }}
+        name: Build Python package
         run: python -m build
 
-      - name: Upload to test pypi.
+      - if: ${{ github.ref == 'refs/heads/main' && 'main' || github.ref == 'refs/heads/develop' && 'develop' }}
+        name: Upload to test pypi.
         run: twine upload --repository-url https://test.pypi.org/legacy/ -u ${{ secrets.TEST_PYPI_USER }} -p ${{ secrets.TEST_PYPI_PASSWORD }} --skip-existing dist/*.whl
 
-      - name: Upload to pypi.
+      - if: ${{ github.ref == 'refs/heads/main' && 'main' || github.ref == 'refs/heads/develop' && 'develop' }}
+        name: Upload to pypi.
         run: twine upload -u ${{ secrets.PYPI_USER }} -p ${{ secrets.PYPI_PASSWORD }} --skip-existing dist/*.whl
