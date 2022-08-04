@@ -62,7 +62,7 @@ setup(
     include_package_data=True,
     install_requires=[
         "bleach>=4.1.0",
-        "django>=2.2",
+        "django>=2.2,<4.1",
         "pytz",
         "djangorestframework>=3.13.1",
         "django-tenants>=3.4.2",
