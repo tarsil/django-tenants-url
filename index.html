@@ -754,7 +754,11 @@
 
 
 <h1 id="django-tenants-url">Django Tenants URL<a class="headerlink" href="#django-tenants-url" title="Permanent link">&para;</a></h1>
-<p><img alt="Build and Publish" src="https://github.com/tarsil/django-tenants-url/actions/workflows/main.yml/badge.svg" /></p>
+<p><img alt="Build and Publish" src="https://github.com/tarsil/django-tenants-url/actions/workflows/main.yml/badge.svg" />
+<a href="https://sonarcloud.io/summary/new_code?id=tarsil_django-tenants-url"><img alt="Quality Gate Status" src="https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-tenants-url&amp;metric=alert_status" /></a>
+<a href="https://sonarcloud.io/summary/new_code?id=tarsil_django-tenants-url"><img alt="Security Rating" src="https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-tenants-url&amp;metric=security_rating" /></a>
+<a href="https://sonarcloud.io/summary/new_code?id=tarsil_django-tenants-url"><img alt="Code Smells" src="https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-tenants-url&amp;metric=code_smells" /></a>
+<a href="https://sonarcloud.io/summary/new_code?id=tarsil_django-tenants-url"><img alt="Vulnerabilities" src="https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-tenants-url&amp;metric=vulnerabilities" /></a></p>
 <p><strong>Official Documentation</strong> - <a href="https://tarsil.github.io/django-tenants-url/">https://tarsil.github.io/django-tenants-url/</a></p>
 <hr />
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
@@ -843,20 +847,6 @@ without breaking the principle and architecture and simply using one single url<
 </thead>
 <tbody>
 <tr>
-<td>2.2</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>3.0</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
 <td>3.1</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -872,6 +862,13 @@ without breaking the principle and architecture and simply using one single url<
 </tr>
 <tr>
 <td>4.0</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>4.1</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -993,7 +990,8 @@ of the utils for your <code>TenantUser</code> (or your implementation),</p>
 </code></pre></div>
 <h3 id="x_request_id">X_REQUEST_ID<a class="headerlink" href="#x_request_id" title="Permanent link">&para;</a></h3>
 <p>By default <code>django-tenants-url</code> has the header name <code>HTTP_X_REQUEST_ID</code> that will be lookup
-from the middleware when sent via HTTP. This name can be changed to whatever suits yours needs.</p>
+from the middleware when sent via HTTP.
+This name can be overriten by the special setting <code>DTU_HEADER_NAME</code>.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>A Django Like app implementing Django Tenants Url can be found <a href="https://github.com/tarsil/django-tenants-url/tree/main/dtu_test_project">here</a>.</p>
 <p>The example can be found <a href="example/">here</a></p>
