@@ -1,8 +1,8 @@
 from customers.tests.factories import TenantFactory, TenantUserFactory, UserFactory
 from django.contrib.auth import get_user_model
 from django.db import IntegrityError, connection
-from django.test import TransactionTestCase
 from django.urls import reverse
+from django_tenants.test.cases import FastTenantTestCase
 from django_tenants.utils import get_tenant_domain_model, get_tenant_model
 from django_webtest import WebTest
 from dtu_test_app.models import Product
@@ -12,7 +12,7 @@ from django_tenants_url.utils import get_tenant_user_model
 from .factories import ProductFactory
 
 
-class BaseTest(TransactionTestCase):
+class BaseTest(FastTenantTestCase):
     def tearDown(self) -> None:
         Product.objects.all().delete()
         connection.set_schema_to_public()
