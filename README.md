@@ -93,11 +93,10 @@ without breaking the principle and architecture and simply using one single url*
 
 | Django / Python | 3.7 | 3.8 | 3.9 | 3.10 |
 | --------------- | --- | --- | --- | ---- |
-| 2.2             | Yes | Yes | Yes | Yes  |
-| 3.0             | Yes | Yes | Yes | Yes  |
 | 3.1             | Yes | Yes | Yes | Yes  |
 | 3.2             | Yes | Yes | Yes | Yes  |
 | 4.0             | Yes | Yes | Yes | Yes  |
+| 4.1             | Yes | Yes | Yes | Yes  |
 
 ## Installation
 

@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime
 
 import bleach
@@ -10,6 +11,8 @@ from rest_framework import serializers
 
 from .handlers import handle_domain, handle_tenant
 from .utils import get_tenant_user_model
+
+logger = logging.getLogger(__name__)
 
 
 class TenantSerializer(serializers.Serializer):
@@ -161,8 +164,9 @@ class TenantUserSerializer(serializers.Serializer):
                 tenant_id=tenant_id,
                 is_active=validated_data["is_active"],
             )
-        except IntegrityError:
-            raise
+        except IntegrityError as e:
+            logger.exception(e)
+            raise e
 
         tenants = get_tenant_user_model().objects.all()
         if tenants.count() == 1:
