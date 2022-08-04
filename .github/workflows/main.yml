@@ -16,7 +16,20 @@ jobs:
       matrix:
         python-version:
           - "3.9"
-        postgres-version: [10.15, 11.10, 12.5, 13.1, 14.0]
+
+    services:
+      db:
+        image: postgres
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_DB: dtu_test_project
+          POSTGRES_PASSWORD: root
+          POSTGRES_USER: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
       - name: Checkout
@@ -33,10 +46,6 @@ jobs:
         run: |
           pip install -r requirements.txt
           python setup.py develop
-
-      - name: Start Docker Compose
-        run: |
-          docker-compose -f unittest.yml up -d
 
       - name: Run tests
         run: |

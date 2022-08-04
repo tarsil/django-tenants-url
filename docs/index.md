@@ -1,6 +1,10 @@
 # Django Tenants URL
 
 ![Build and Publish](https://github.com/tarsil/django-tenants-url/actions/workflows/main.yml/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-tenants-url&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tarsil_django-tenants-url)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-tenants-url&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=tarsil_django-tenants-url)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-tenants-url&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=tarsil_django-tenants-url)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-tenants-url&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=tarsil_django-tenants-url)
 
 **Official Documentation** - <https://tarsil.github.io/django-tenants-url/>
 
