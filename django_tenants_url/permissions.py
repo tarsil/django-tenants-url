@@ -39,7 +39,7 @@ class BaseTenantPermission(BasePermission):
             return get_tenant_user_model().objects.get(
                 user=request.user, tenant__tenant_uuid=header
             )
-        except get_tenant_user_model().DoesNotExist as e:
+        except get_tenant_user_model().DoesNotExist:
             raise NotFound()
 
 

@@ -161,8 +161,8 @@ class TenantUserSerializer(serializers.Serializer):
                 tenant_id=tenant_id,
                 is_active=validated_data["is_active"],
             )
-        except IntegrityError as e:
-            raise e
+        except IntegrityError:
+            raise
 
         tenants = get_tenant_user_model().objects.all()
         if tenants.count() == 1:
