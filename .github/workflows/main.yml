@@ -70,13 +70,11 @@ jobs:
         run: |
           rm -r dtu_test_project/venv
 
-      - if: ${{ github.ref == 'refs/heads/main' && 'main' || github.ref == 'refs/heads/develop' && 'develop' }}
-        name: Install Python dependencies
+      - name: Install Python dependencies
         run: pip install wheel twine mkdocs-material
 
-      - if: ${{ github.ref == 'refs/heads/main' && 'main' || github.ref == 'refs/heads/develop' && 'develop' }}
-        name: Build Python package
-        run: python -m build
+      - name: Build Python package
+        run: python setup.py sdist bdist_wheel
 
       - if: ${{ github.ref == 'refs/heads/main' && 'main' || github.ref == 'refs/heads/develop' && 'develop' }}
         name: Upload to test pypi.
