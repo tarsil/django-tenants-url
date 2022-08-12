@@ -6,8 +6,6 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-tenants-url&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=tarsil_django-tenants-url)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-tenants-url&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=tarsil_django-tenants-url)
 
-**Official Documentation** - <https://tarsil.github.io/django-tenants-url/>
-
 ---
 
 ## Table of Contents
@@ -23,7 +21,6 @@
       - [Django Tenants URL Settings](#django-tenants-url-settings)
       - [X_REQUEST_ID](#x_request_id)
    - [Example](#example)
-   - [Documentation and Support](#documentation-and-support)
    - [License](#license)
 
 ---
@@ -199,10 +196,6 @@ pip install django-tenants-url
 And that is it. The `RequestUUIDTenantMiddleware` should be able to map
 the `TenantUser` created with a tenant and route the queries to the associated schema.
 
-Checkout the [documentation](https://tarsil.github.io/django-tenants-url/)
-and understand how to integrate with your views and taking advantage
-of the utils for your `TenantUser` (or your implementation),
-
 ### Django Tenants URL Settings
 
 ```python
@@ -231,10 +224,6 @@ This name can be overriten by the special setting `DTU_HEADER_NAME`.
 A Django Like app implementing Django Tenants Url can be found [here](https://github.com/tarsil/django-tenants-url/tree/main/dtu_test_project).
 
 The example can be found [here](./example.md)
-
-## Documentation and Support
-
-Full documentation for the project is available at <https://tarsil.github.io/django-tenants-url/>
 
 ## License
 

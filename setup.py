@@ -51,7 +51,7 @@ version = get_version("django_tenants_url")
 setup(
     name="django_tenants_url",
     version=version,
-    url=" https://tarsil.github.io/django-tenants-url/",
+    url="https://django-tenants-url.tarsild.io/",
     license="MIT",
     description="Django Tenants managed by a single URL.",
     long_description=read("README.md"),
@@ -62,10 +62,10 @@ setup(
     include_package_data=True,
     install_requires=[
         "bleach>=4.1.0",
-        "django>=2.2,<4.1",
+        "django>=2.2",
         "pytz",
         "djangorestframework>=3.13.1",
-        "django-tenants>=3.4.2",
+        "django-tenants>=3.4.3",
     ],
     python_requires=">=3.7",
     zip_safe=False,
