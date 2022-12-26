@@ -3,13 +3,9 @@ name: Build, Test and Publish
 on:
   push:
     branches:
-      - master
-      - develop
-      - main
-      - release/**
-      - fix/**
-      - hotfix/**
-      - feature/**
+      - "**"
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   tests:
